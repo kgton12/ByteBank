@@ -9,7 +9,7 @@ namespace ByteBank
     public LeitorDeArquivos(string arquivo)
     {
       Arquivo = arquivo;
-      throw new FileNotFoundException();
+      //throw new FileNotFoundException();
       Console.WriteLine("Abrindo arquivo: " + arquivo);
     }
     public string LerProximaLinha()
