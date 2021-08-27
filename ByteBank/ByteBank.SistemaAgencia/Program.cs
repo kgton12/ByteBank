@@ -8,9 +8,21 @@ namespace ByteBank.SistemaAgencia
   {
     static void Main(string[] args)
     {
-      NuGet();
-    }    
+       StringRegex();
 
+      Console.ReadLine();
+    }    
+    static void StringRegex()
+    {
+      string url = "pagina?moedaOrigem=real&moedaDestino=dolar";
+
+      int indice = url.IndexOf('?');
+
+      string argumentos = url.Substring(indice);
+
+      Console.WriteLine(argumentos);
+      
+    }
     static void NuGet()
     {
       DateTime dataFimPagamento = new(2022, 8, 17);
