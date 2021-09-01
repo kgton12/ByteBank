@@ -72,5 +72,18 @@ namespace ByteBank.SistemaAgencia
 
 
     }
+    static void InitArray()
+    {
+      ContaCorrente[] contaCorrente = new ContaCorrente[]{
+        new ContaCorrente(874, 123),
+        new ContaCorrente(874, 456),
+        new ContaCorrente(874, 789),
+      };
+
+      for (int i = 0; i < contaCorrente.Length; i++)
+      {
+        Console.WriteLine($"Conta {i} {contaCorrente[i].Numero}");
+      }
+    }
   }
 }
