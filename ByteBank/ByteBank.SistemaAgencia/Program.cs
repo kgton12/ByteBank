@@ -1,6 +1,7 @@
 ﻿using ByteBank.Modelos;
 using System;
 using Humanizer;
+using System.Text.RegularExpressions;
 
 namespace ByteBank.SistemaAgencia
 {
@@ -8,11 +9,10 @@ namespace ByteBank.SistemaAgencia
   {
     static void Main(string[] args)
     {
-       StringRegex();
 
-      Console.ReadLine();
-    }    
-    static void StringRegex()
+
+    }
+    static void IndexOfString()
     {
       string url = "pagina?moedaOrigem=real&moedaDestino=dolar";
 
@@ -21,7 +21,7 @@ namespace ByteBank.SistemaAgencia
       string argumentos = url.Substring(indice);
 
       Console.WriteLine(argumentos);
-      
+
     }
     static void NuGet()
     {
@@ -32,6 +32,19 @@ namespace ByteBank.SistemaAgencia
       string mensagem = "Vencimento em " + TimeSpanHumanizeExtensions.Humanize(diferenca);
       Console.WriteLine(mensagem);
       Console.ReadLine();
+    }
+    static void RegexText()
+    { // "[0123456789][0123456789][0123456789][0123456789][-][0123456789][0123456789][0123456789][0123456789]"
+      // "[0-9][0-9][0-9][0-9][-][0-9][0-9][0-9][0-9]"
+      // "[0-9]{4,5}[-][0-9]{4}"
+      // "[0-9]{4,5}[-]{0,1}[0-9]{4}"
+      string padrao = "[0-9]{4,5}[-]?[0-9]{4}";
+
+      string texto = "Me ligue agora 91234-5678";
+
+      Match resultado = Regex.Match(texto, padrao);
+
+      Console.WriteLine(resultado.Value);
     }
   }
 }
