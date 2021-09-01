@@ -10,7 +10,6 @@ namespace ByteBank.SistemaAgencia
     static void Main(string[] args)
     {
 
-      MetodoEquals();
     }
     static void IndexOfString()
     {
