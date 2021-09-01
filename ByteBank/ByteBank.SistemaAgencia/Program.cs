@@ -9,8 +9,8 @@ namespace ByteBank.SistemaAgencia
   {
     static void Main(string[] args)
     {
-      
 
+      MetodoEquals();
     }
     static void IndexOfString()
     {
@@ -50,6 +50,28 @@ namespace ByteBank.SistemaAgencia
     {
       ContaCorrente contaCorrente = new(123, 123);
       Console.WriteLine(contaCorrente);
+    }
+    static void MetodoEquals()
+    {
+      Cliente cliente1 = new();
+      cliente1.Nome = "Joao";
+      cliente1.CPF = "123123123";
+      cliente1.Profissao = "teste";
+
+      Cliente cliente2 = new();
+      cliente2.Nome = "Joao";
+      cliente2.CPF = "123123123";
+      cliente2.Profissao = "teste";
+
+
+      if (cliente1.Equals(cliente2))
+      {
+        Console.WriteLine("Igual");
+      }
+
+
+
+
     }
   }
 }
