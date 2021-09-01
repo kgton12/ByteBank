@@ -9,7 +9,7 @@ namespace ByteBank.SistemaAgencia
   {
     static void Main(string[] args)
     {
-
+      
 
     }
     static void IndexOfString()
@@ -45,6 +45,11 @@ namespace ByteBank.SistemaAgencia
       Match resultado = Regex.Match(texto, padrao);
 
       Console.WriteLine(resultado.Value);
+    }
+    static void OverrideToString()
+    {
+      ContaCorrente contaCorrente = new(123, 123);
+      Console.WriteLine(contaCorrente);
     }
   }
 }
