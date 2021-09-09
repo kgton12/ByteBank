@@ -85,5 +85,15 @@ namespace ByteBank.SistemaAgencia
         Console.WriteLine($"Conta {i} {contaCorrente[i].Numero}");
       }
     }
+    static void Indexador()
+    {
+      ListaDeContaCorrente lista = new();
+      ContaCorrente contaCorrente = new ContaCorrente(123,123456);
+
+      for (int i = 0; i < lista.Tamanho; i++)
+      {
+        ContaCorrente itemAtual = lista[i];//utilizando indexador igual array.
+      }
+    }
   }
 }

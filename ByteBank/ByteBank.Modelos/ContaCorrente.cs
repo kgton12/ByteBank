@@ -115,6 +115,17 @@ namespace ByteBank.Modelos
       return $"Número {Numero}, Agência {Agencia}, Saldo {Saldo}";
       //return base.ToString();
     }
+    public override bool Equals(object obj)
+    {
+      ContaCorrente conta = obj as ContaCorrente;
+
+      if (conta == null)
+      {
+        return false;
+      }
+
+      return (Numero == conta.Numero && Agencia == conta.Agencia);
+    }
   }
 
 }
