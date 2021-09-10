@@ -1,11 +1,11 @@
-﻿using ByteBank.Modelos;
-using System;
+﻿using System;
+
 
 namespace ByteBank.SistemaAgencia
 {
-  public class ListaDeContaCorrente
+  public class ListaGenerica<T>//T declara como uma classe generica
   {
-    private ContaCorrente[] _itens;
+    private T[] _itens;
     private int _proximaPosicao;
     public int Tamanho
     {
@@ -14,12 +14,12 @@ namespace ByteBank.SistemaAgencia
         return _proximaPosicao;
       }
     }
-    public ListaDeContaCorrente(int capacidadeInicial = 5)
+    public ListaGenerica(int capacidadeInicial = 5)
     {
-      _itens = new ContaCorrente[capacidadeInicial];
+      _itens = new T[capacidadeInicial];
       _proximaPosicao = 0;
     }
-    public void Adicionar(ContaCorrente item)
+    public void Adicionar(T item)
     {
       VerificarCapacidade(_proximaPosicao + 1);
 
@@ -43,7 +43,7 @@ namespace ByteBank.SistemaAgencia
 
       //Console.WriteLine("Aumentando capacidade da lista!");
 
-      ContaCorrente[] novoArray = new ContaCorrente[novoTamanho];
+      T[] novoArray = new T[novoTamanho];
 
       for (int indice = 0; indice < _itens.Length; indice++)
       {
@@ -53,14 +53,14 @@ namespace ByteBank.SistemaAgencia
 
       _itens = novoArray;
     }
-    public void Remover(ContaCorrente item)
+    public void Remover(T item)
     {
 
       int indiceItem = -1;
 
       for (int i = 0; i < _proximaPosicao; i++)
       {
-        ContaCorrente itemAtual = _itens[i];
+        T itemAtual = _itens[i];
         if (itemAtual.Equals(item))
         {
           indiceItem = i;
@@ -76,7 +76,7 @@ namespace ByteBank.SistemaAgencia
       _proximaPosicao--;
       _itens[_proximaPosicao] = null;
     }
-    public ContaCorrente GetItemNoIndice(int i)
+    public T GetItemNoIndice(int i)
     {
       if (i < 0 || i >= _proximaPosicao)
       {
@@ -85,18 +85,18 @@ namespace ByteBank.SistemaAgencia
 
       return _itens[i];
     }
-    public ContaCorrente this[int i]//indexador
+    public T this[int i]//indexador
     {
       get
       {
         return GetItemNoIndice(i);
       }
     }
-    public void AdicionarVarios(params ContaCorrente[] itens)
+    public void AdicionarVarios(params T[] itens)
     {
-      foreach (ContaCorrente conta in itens)
+      foreach (T item in itens)
       {
-        Adicionar(conta);
+        Adicionar(item);
       }
     }
   }

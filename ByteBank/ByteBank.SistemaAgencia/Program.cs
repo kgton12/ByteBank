@@ -88,12 +88,39 @@ namespace ByteBank.SistemaAgencia
     static void Indexador()
     {
       ListaDeContaCorrente lista = new();
-      ContaCorrente contaCorrente = new ContaCorrente(123,123456);
+      ContaCorrente contaCorrente = new ContaCorrente(123, 123456);
 
       for (int i = 0; i < lista.Tamanho; i++)
       {
         ContaCorrente itemAtual = lista[i];//utilizando indexador igual array.
       }
+    }
+    static void Params()
+    {
+      ListaDeContaCorrente lista = new ListaDeContaCorrente();
+
+      lista.AdicionarVarios(
+        new ContaCorrente(123, 123),
+        new ContaCorrente(456, 456),
+        new ContaCorrente(789, 789)
+        );
+    }
+    static void ListaDeObjetos()
+    {
+      ListaDeObject listaDeIdade = new();
+
+      listaDeIdade.Adicionar(10);
+      listaDeIdade.AdicionarVarios(10, 15, 16, 58);
+
+      for (int i = 0; i < listaDeIdade.Tamanho; i++)
+      {
+        Console.WriteLine($"Idade no indice {i} : {listaDeIdade[i]}");
+      }
+      Console.ReadLine();
+    }
+    static void ListaGerenerica()
+    {
+      ListaGenerica<int> idades = new ListaGenerica<int>();
     }
   }
 }
