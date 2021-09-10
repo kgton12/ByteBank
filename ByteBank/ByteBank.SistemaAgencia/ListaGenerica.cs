@@ -1,6 +1,5 @@
 ﻿using System;
 
-
 namespace ByteBank.SistemaAgencia
 {
   public class ListaGenerica<T>//T declara como uma classe generica
@@ -23,8 +22,6 @@ namespace ByteBank.SistemaAgencia
     {
       VerificarCapacidade(_proximaPosicao + 1);
 
-      //Console.WriteLine($"Adicionando item na posição {_proximaPosicao}");
-
       _itens[_proximaPosicao] = item;
       _proximaPosicao++;
     }
@@ -41,14 +38,11 @@ namespace ByteBank.SistemaAgencia
         novoTamanho = tamanhoNecessario;
       }
 
-      //Console.WriteLine("Aumentando capacidade da lista!");
-
       T[] novoArray = new T[novoTamanho];
 
       for (int indice = 0; indice < _itens.Length; indice++)
       {
         novoArray[indice] = _itens[indice];
-        //Console.WriteLine(".");
       }
 
       _itens = novoArray;
@@ -74,7 +68,7 @@ namespace ByteBank.SistemaAgencia
       }
 
       _proximaPosicao--;
-      _itens[_proximaPosicao] = null;
+      _itens[_proximaPosicao] = default;//atribui o valor padrao para cada tipo de variavel
     }
     public T GetItemNoIndice(int i)
     {
