@@ -2,6 +2,7 @@
 using System;
 using Humanizer;
 using System.Text.RegularExpressions;
+using System.Collections.Generic;
 
 namespace ByteBank.SistemaAgencia
 {
@@ -9,6 +10,8 @@ namespace ByteBank.SistemaAgencia
   {
     static void Main(string[] args)
     {
+
+
 
     }
     static void IndexOfString()
@@ -121,6 +124,13 @@ namespace ByteBank.SistemaAgencia
     static void ListaGerenerica()
     {
       ListaGenerica<int> idades = new ListaGenerica<int>();
+    }
+    static void ListaExtencoes()
+    {
+      List<int> idades = new();
+      ListExtensoes.AdicionarVarios(idades, 1, 5, 8, 9);
+
+      idades.AdicionarVarios(1, 2, 8);
     }
   }
 }
