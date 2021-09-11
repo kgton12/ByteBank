@@ -3,6 +3,7 @@ using System;
 using Humanizer;
 using System.Text.RegularExpressions;
 using System.Collections.Generic;
+using ByteBank.SistemaAgencia.Extensoes;
 
 namespace ByteBank.SistemaAgencia
 {
@@ -128,9 +129,8 @@ namespace ByteBank.SistemaAgencia
     static void ListaExtencoes()
     {
       List<int> idades = new();
-      ListExtensoes.AdicionarVarios(idades, 1, 5, 8, 9);
 
-      idades.AdicionarVarios(1, 2, 8);
+      idades.AdicionarVarios(1, 5, 8, 9);
     }
   }
 }
